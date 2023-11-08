@@ -1,8 +1,6 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Key, Person, Adress
+from .models import Key
 
 admin.site.register(Key)
-admin.site.register(Person)
-admin.site.register(Adress)
