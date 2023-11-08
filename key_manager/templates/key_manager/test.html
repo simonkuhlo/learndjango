@@ -2,20 +2,20 @@
 
 {% block content %}
 
-<h1>Home Template</h1>
+<h1 class = "centered">Test</h1>
 
 <div>
-    <a href='{% url 'create-room' %}'>
-        <p style = "border:double black 2px; padding:3px; display: inline-block;">Create Room</p>
-    </a>
-    <div>
-        {% for entry in entries %}
-        <div>
-            <span>@{{entry.author.name}}</span>
-            <h5>{{room.id}} -- <a href="/room/{{room.id}}">{{room.name}}</a> </h5>
-        </div>
+    <table>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+        </tr>
+        {% for key in keys %}
+        <tr>
+          <td class = "simple_border centered">{{key.id}}</td>
+          <td>{{key.name}}</td>
+        </tr>
         {% endfor %}
-    </div>
+    </table>
 </div>
-
 {% endblock %}
