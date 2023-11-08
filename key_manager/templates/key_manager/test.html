@@ -5,17 +5,23 @@
 <h1 class = "centered">Test</h1>
 
 <div>
-    <table>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-        </tr>
-        {% for key in keys %}
-        <tr>
-          <td class = "simple_border centered">{{key.id}}</td>
-          <td>{{key.name}}</td>
-        </tr>
-        {% endfor %}
+    <table class="table-sortable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key in keys %}
+            <tr>
+                <td class = "simple_border centered">{{key.id}}</td>
+                <td>{{key.name}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
+    {% load static %}
+    <script src="{% static 'scripts/tablesort.js' %}"></script>
 </div>
 {% endblock %}
