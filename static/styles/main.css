@@ -10,6 +10,10 @@ body{
 
 .centered{
     text-align: center;
+}
+
+.center-box{
+    display: flex;
     justify-content: center;
 }
 
@@ -28,16 +32,21 @@ td{
 	cursor: pointer;
 }
 
+.table-sortable .th-sort-none::after {
+    content: "\2B81";
+}
+
 .table-sortable .th-sort-asc::after {
-	content: "\25b4";
+	content: "\2B61";
 }
 
 .table-sortable .th-sort-desc::after {
-	content: "\25be";
+	content: "\2B63";
 }
 
 .table-sortable .th-sort-asc::after,
-.table-sortable .th-sort-desc::after {
+.table-sortable .th-sort-desc::after,
+.table-sortable .th-sort-none::after {
 	margin-left: 5px;
 }
 

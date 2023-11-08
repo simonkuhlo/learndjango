@@ -30,7 +30,9 @@ function sortTableByColumn(table, column, asc = true) {
 	table.querySelectorAll("th").forEach(th => th.classList.remove("th-sort-asc", "th-sort-desc"));
 	table.querySelector(`th:nth-child(${column + 1})`).classList.toggle("th-sort-asc", asc);
 	table.querySelector(`th:nth-child(${column + 1})`).classList.toggle("th-sort-desc", !asc);
-}
+	// Apply CSS style to headers without 'th-sort-asc' or 'th-sort-desc'
+	table.querySelectorAll("th:not(.th-sort-asc):not(.th-sort-desc)").forEach(th => th.classList.add("th-sort-none"));
+};
 
 document.querySelectorAll(".table-sortable th").forEach(headerCell => {
 	headerCell.addEventListener("click", () => {
