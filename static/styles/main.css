@@ -30,6 +30,8 @@ td{
 
 .table-sortable th {
 	cursor: pointer;
+    font-family: "Courier New", Courier, monospace;
+    margin-left: 5px;
 }
 
 .table-sortable .th-sort-none::after {
@@ -37,17 +39,11 @@ td{
 }
 
 .table-sortable .th-sort-asc::after {
-	content: "\2B61";
+	content: " \2B61";
 }
 
 .table-sortable .th-sort-desc::after {
-	content: "\2B63";
-}
-
-.table-sortable .th-sort-asc::after,
-.table-sortable .th-sort-desc::after,
-.table-sortable .th-sort-none::after {
-	margin-left: 5px;
+	content: " \2B63";
 }
 
 .table-sortable .th-sort-asc,
