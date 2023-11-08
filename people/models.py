@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Adress(models.Model):
+class Address(models.Model):
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
     land = models.CharField(max_length=100)
@@ -13,7 +13,7 @@ class Adress(models.Model):
 
 
 class Contact(models.Model):
-    address = models.ForeignKey(Adress, on_delete=models.SET_NULL, null=True, default=None)
+    address = models.ForeignKey(Address, on_delete=models.SET_NULL, null=True, default=None)
     email = models.CharField(max_length=100)
     discord = models.CharField(max_length=100)
     phone = models.CharField(max_length=100)

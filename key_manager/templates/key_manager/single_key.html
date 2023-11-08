@@ -1,0 +1,32 @@
+{% extends 'main.html'%}
+
+{% block content %}
+
+<a href="/keys/">&#x21B6; Back</a>
+
+<h1 class = "centered">{{key.name}}</h1>
+
+<div class = "center-box">
+    <div class = "simple_border medium_box">
+    <div class = "center-box">
+
+        <table class = "simple_border small_box">
+            <tr>
+                <th>ID</th>
+                <th>{{key.id}}</th>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <th>{{key.address}}</th>
+            </tr>
+        </table>
+        
+    </div>
+    <hr>
+        <h3 class="no_margin">Descprition</h3>
+        <p class="no_margin">{{key.description}}</p>
+    <hr>
+    <p class = "footnote no_margin">Created: {{key.created}}<br>Updated: {{key.updated}}</p>
+</div>
+</div>
+{% endblock %}

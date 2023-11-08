@@ -3,21 +3,40 @@ body{
     font-family: Palatino, "Trebuchet MS", Helvetica, sans-serif;
 }
 
+a{
+    color: #ffa500;
+    text-decoration: inherit; /* no underline */
+}
+
+h3{ 
+    color:  cadetblue;
+    font-style: italic;
+    text-decoration: underline cadetblue;
+}
+
+hr{
+    border: 0px;
+    border-top: 1px solid black;
+
+}
+
 .simple_border{
     border: 1px solid black;
     border-radius: 10px;
     padding: 3px;
+    margin: 0px;
 }
 
 .centered{
     text-align: center;
 }
 
-.center-box{
-    display: flex;
-    justify-content: center;    
+.no_margin{
+    margin: 0px;
 }
 
-.wrap-box{
-    display: inline-flex;
+.footnote {
+    color:  grey;
+    font-style: italic;
+    font-size: small;
 }

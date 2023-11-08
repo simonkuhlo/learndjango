@@ -4,7 +4,7 @@ from people import models as people
 
 class Key(models.Model):
     name = models.CharField(max_length=100)
-    address = models.ForeignKey(people.Adress, on_delete=models.SET_NULL, null=True, default=None)
+    address = models.ForeignKey(people.Address, on_delete=models.SET_NULL, null=True, default=None, blank=True)
     description = models.CharField(max_length=500)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)

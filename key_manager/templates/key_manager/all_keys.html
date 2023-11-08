@@ -6,22 +6,23 @@
 
 <div class = "center-box">
     <div class = "wrap-box simple_border">
-    <table class="table-sortable">
-        <thead>
-            <tr>
-                <th class = "th-sort-none">ID</th>
-                <th class = "th-sort-none">Name</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for key in keys %}
-            <tr>
-                <td class = "simple_border centered">{{key.id}}</td>
-                <td>{{key.name}}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+        <table class="table-sortable">
+            <thead>
+                <tr>
+                    <th class = "th-sort-none">ID</th>
+                    <th class = "th-sort-none">Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for key in keys %}
+                <tr>
+                    <td class = "simple_border centered"><a href="/keys/id:{{key.id}}">{{key.id}}</a></td>
+                    <td>{{key.name}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
     {% load static %}
     <script src="{% static 'scripts/tablesort.js' %}"></script>
 </div>

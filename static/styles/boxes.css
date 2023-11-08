@@ -1,0 +1,21 @@
+.center-box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;  
+    align-items: center;
+    
+}
+
+.wrap-box{
+    display: inline-flex;
+}
+
+.medium_box{
+    max-width: 500px;
+    width: 500px;
+}
+
+.small_box{
+    width: 200px;
+}

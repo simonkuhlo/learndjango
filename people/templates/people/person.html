@@ -1,0 +1,36 @@
+{% extends 'main.html'%}
+
+{% block content %}
+
+<a href="/people/">&#x21B6; Back</a>
+
+<h1 class = "centered">{{key.name}}</h1>
+
+<div class = "center-box">
+    <div class = "simple_border medium_box">
+    <div class = "center-box">
+
+        <table class = "simple_border small_box">
+            <tr>
+                <th>First Name</th>
+                <th>{{person.first_name}}</th>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <th>{{person.last_name}}</th>
+            </tr>
+            <tr>
+                <th>Contact</th>
+                <th>{{person.contact}}</th>
+            </tr>
+        </table>
+        
+    </div>
+    <hr>
+        <h3 class="no_margin">Descprition</h3>
+        <p class="no_margin">{{person.description}}</p>
+    <hr>
+    <p class = "footnote no_margin">Created: {{person.created}}<br>Updated: {{person.updated}}</p>
+</div>
+</div>
+{% endblock %}
