@@ -1,0 +1,34 @@
+
+th {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 3px;
+  }
+
+td{
+    padding: 3px;
+}
+
+
+.table-sortable th {
+	cursor: pointer;
+    font-family: "Courier New", Courier, monospace;
+    margin-left: 5px;
+}
+
+.table-sortable .th-sort-none::after {
+    content: "\2B81";
+}
+
+.table-sortable .th-sort-asc::after {
+	content: " \2B61";
+}
+
+.table-sortable .th-sort-desc::after {
+	content: " \2B63";
+}
+
+.table-sortable .th-sort-asc,
+.table-sortable .th-sort-desc {
+	background: rgba(0, 0, 0, 0.1);
+}
