@@ -1,0 +1,29 @@
+{% extends 'main.html'%}
+
+{% block content %}
+
+<h1 class = "centered">People List</h1>
+
+<div class = "center-box">
+    <div class = "wrap-box simple_border">
+        <table class="table-sortable">
+            <thead>
+                <tr>
+                    <th class = "th-sort-none">ID</th>
+                    <th class = "th-sort-none">Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for person in people %}
+                <tr>
+                    <td class = "simple_border centered"><a href="/people/id:{{person.id}}">{{person.id}}</a></td>
+                    <td>{{person.first_name}} {{person.last_name}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% load static %}
+    <script src="{% static 'scripts/tablesort.js' %}"></script>
+</div>
+{% endblock %}

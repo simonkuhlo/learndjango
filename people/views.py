@@ -2,8 +2,16 @@ from django.shortcuts import render
 from .models import Person, Address, Contact
 
 # Create your views here.
-def all_people(request):
-    return render(request, 'people/all_people.html')
+def people_list(request):
+    people = Person.objects.all()
+    ctx = {"people" : people}
+    return render(request, 'people/people_list.html', ctx)
+
+def address_list(request):
+    return render(request, 'people/address_list.html')
+
+def contact_list(request):
+    return render(request, 'people/contact_list.html')
 
 def person(request, pk):
     object = Person.objects.get(id=pk)
