@@ -4,13 +4,13 @@
 
 <a href="/people/">&#x21B6; Back</a>
 
-<h1 class = "centered">{{key.name}}</h1>
-
+<h1 class = "centered">{{person.first_name}} {{person.last_name}}</h1>
 <div class = "center-box">
+    
     <div class = "simple_border medium_box">
     <div class = "center-box">
 
-        <table class = "simple_border small_box">
+        <table class = "simple_border">
             <tr>
                 <th>First Name</th>
                 <th>{{person.first_name}}</th>
@@ -20,8 +20,20 @@
                 <th>{{person.last_name}}</th>
             </tr>
             <tr>
-                <th>Contact</th>
-                <th>{{person.contact}}</th>
+                <th>Birthday</th>
+                <th>{{person.birthday}}</th>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <th>{{person.address}}</th>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <th>{{person.email}}</th>
+            </tr>
+            <tr>
+                <th>Contacts</th>
+                <th>TODO</th>
             </tr>
         </table>
         

@@ -12,25 +12,19 @@ class Address(models.Model):
         return(str(self.name))
 
 
-class Contact(models.Model):
-    address = models.ForeignKey(Address, on_delete=models.SET_NULL, null=True, default=None)
-    email = models.CharField(max_length=100)
-    discord = models.CharField(max_length=100)
-    phone = models.CharField(max_length=100)
-    instagram = models.CharField(max_length=100)
-    twitter = models.CharField(max_length=100)
-    steam = models.CharField(max_length=100)
-
-    def __str__(self):
-        return(str(self.id))
-
-
 class Person(models.Model):
     #user_id = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, default=None)
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
-    description = models.CharField(max_length=200, null=True, default=None)
-    contact = models.ForeignKey(Contact, on_delete=models.SET_NULL, null=True, default=None)
+    description = models.CharField(max_length=200, null=True, default=None, blank=True)
+    birthday = models.DateField(max_length=100, null=True, default=None)
+    address = models.ForeignKey(Address, on_delete=models.SET_NULL, null=True, default=None, blank=True)
+    email = models.CharField(max_length=100, null=True, default=None, blank=True)
+    discord = models.CharField(max_length=100, null=True, default=None, blank=True)
+    phone = models.CharField(max_length=100, null=True, default=None, blank=True)
+    instagram = models.CharField(max_length=100, null=True, default=None, blank=True)
+    twitter = models.CharField(max_length=100, null=True, default=None, blank=True)
+    steam = models.CharField(max_length=100, null=True, default=None, blank=True)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
 
