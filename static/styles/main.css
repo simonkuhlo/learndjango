@@ -40,3 +40,8 @@ hr{
     font-style: italic;
     font-size: small;
 }
+
+.rightbound{
+    float: right;
+    margin-left: auto;
+}

@@ -23,5 +23,6 @@ urlpatterns = [
     path('test/', include('user_book.urls'), name = 'test'),
     path('keys/', include('key_manager.urls'), name = 'keys'),
     path('people/', include('people.urls'), name = 'people'),
+    path('search/', views.search, name='search'),
     path('', views.home, name='home')
 ]
