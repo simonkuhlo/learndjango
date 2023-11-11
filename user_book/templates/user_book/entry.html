@@ -1,0 +1,59 @@
+"""
+USERNAME
+_created_when_
+display about me 
+display Profile Picture
+#for answer in answers:
+display answer.question.name
+display answer.value
+#endfor
+"""
+
+{% extends 'main.html'%}
+
+{% block content %}
+
+<a href="/people/">&#x21B6; Back</a>
+
+<h1 class = "centered">{{person.first_name}} {{person.last_name}}</h1>
+<div class = "center-box">
+    
+    <div class = "simple_border medium_box">
+    <div class = "center-box">
+
+        <table class = "simple_border">
+            <tr>
+                <th>First Name</th>
+                <th>{{person.first_name}}</th>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <th>{{person.last_name}}</th>
+            </tr>
+            <tr>
+                <th>Birthday</th>
+                <th>{{person.birthday}}</th>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <th>{{person.address}}</th>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <th>{{person.email}}</th>
+            </tr>
+            <tr>
+                <th>Contacts</th>
+                <th>TODO</th>
+            </tr>
+        </table>
+        
+    </div>
+    <hr>
+        <h3 class="no_margin">Descprition</h3>
+        <p class="no_margin">{{person.description}}</p>
+    <hr>
+    <p class = "footnote no_margin">Created: {{person.created}}<br>Updated: {{person.updated}}</p>
+</div>
+</div>
+{% endblock %}

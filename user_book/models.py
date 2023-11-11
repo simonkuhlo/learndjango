@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from people import models as people
 
 # Create your models here.
 class Interview(models.Model):
@@ -8,8 +8,11 @@ class Interview(models.Model):
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
     
+    def __str__(self):
+        return(str(self.name))
+    
 class Entry(models.Model):
-    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    author = models.ForeignKey(people.Person, on_delete=models.SET_NULL, null=True)
     interview = models.ForeignKey(Interview, on_delete=models.SET_NULL, null=True)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
@@ -26,6 +29,7 @@ class Question(models.Model):
     question_value = models.CharField(max_length=200)
     description = models.CharField(max_length=500)
     type = models.CharField(max_length=100) #FileUpload, Interview, AboutMe
+    sort_id = models.SmallIntegerField(null=True, blank=True)
     required = models.BooleanField(default=False)
 
     def __str__(self):

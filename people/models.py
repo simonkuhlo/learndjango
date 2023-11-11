@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Address(models.Model):
@@ -13,7 +14,7 @@ class Address(models.Model):
 
 
 class Person(models.Model):
-    #user_id = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, default=None)
+    user_id = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, default=None, blank=True)
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     description = models.CharField(max_length=200, null=True, default=None, blank=True)
