@@ -2,9 +2,15 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
+class Interview(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.CharField(max_length=500)
+    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True)
+    
 class Entry(models.Model):
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    form = models.CharField(max_length=100)
+    interview = models.ForeignKey(Interview, on_delete=models.SET_NULL, null=True)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
 
@@ -14,13 +20,8 @@ class Entry(models.Model):
     def __str__(self):
         return(str(self.id))
 
-class Interview(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.CharField(max_length=500)
-    updated = models.DateTimeField(auto_now=True)
-    created = models.DateTimeField(auto_now_add=True)
-
 class Question(models.Model):
+    interview = models.ForeignKey(Interview, on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=100)
     question_value = models.CharField(max_length=200)
     description = models.CharField(max_length=500)
