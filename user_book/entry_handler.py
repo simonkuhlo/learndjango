@@ -6,12 +6,13 @@ def entry_to_dict(etnryid):
     answers = models.Answer.objects.filter(entry=etnryid)
     interview_dict = {}
     for answer in answers:
-        question_model = models.Question.objects.get(id=answer.question)
+        question_model = models.Question.objects.get(id=answer.question.id)
         interview_dict.update({question_model.question_value : answer.answer_value})
     
     entry_dict = {
+        "full_name" : "TODO",
         "about_me" : "TODO",
         "profile_picture" : "TODO",
         "interview" : interview_dict
     }
-    print(entry_dict)
+    return(entry_dict)

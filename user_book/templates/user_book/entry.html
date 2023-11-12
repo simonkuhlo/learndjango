@@ -13,47 +13,22 @@ display answer.value
 
 {% block content %}
 
-<a href="/people/">&#x21B6; Back</a>
+<a href="/book/">&#x21B6; Back</a>
 
-<h1 class = "centered">{{person.first_name}} {{person.last_name}}</h1>
-<div class = "center-box">
-    
-    <div class = "simple_border medium_box">
-    <div class = "center-box">
-
-        <table class = "simple_border">
-            <tr>
-                <th>First Name</th>
-                <th>{{person.first_name}}</th>
-            </tr>
-            <tr>
-                <th>Last Name</th>
-                <th>{{person.last_name}}</th>
-            </tr>
-            <tr>
-                <th>Birthday</th>
-                <th>{{person.birthday}}</th>
-            </tr>
-            <tr>
-                <th>Address</th>
-                <th>{{person.address}}</th>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <th>{{person.email}}</th>
-            </tr>
-            <tr>
-                <th>Contacts</th>
-                <th>TODO</th>
-            </tr>
-        </table>
-        
+<h1 class = "centered">{{full_name}}</h1>
+<div class = "bar">
+    <div>
+    <h2>About Me</h2>
+    <p>{{about_me}}</p>
     </div>
-    <hr>
-        <h3 class="no_margin">Descprition</h3>
-        <p class="no_margin">{{person.description}}</p>
-    <hr>
-    <p class = "footnote no_margin">Created: {{person.created}}<br>Updated: {{person.updated}}</p>
+    <div>
+    <h2>Picture</h2>
+    <p>{{profile_picture}}</p>
+    </div>
 </div>
-</div>
+<h2>Interview</h2>
+{% for question, answer in interview.items %}
+    <h3>{{question}}</h3>
+    <p>{{answer}}</p>
+{% endfor %}
 {% endblock %}
