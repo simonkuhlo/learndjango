@@ -1,14 +1,3 @@
-"""
-USERNAME
-_created_when_
-display about me 
-display Profile Picture
-#for answer in answers:
-display answer.question.name
-display answer.value
-#endfor
-"""
-
 {% extends 'main.html'%}
 
 {% block content %}
@@ -17,14 +6,14 @@ display answer.value
 
 <h1 class = "centered">{{full_name}}</h1>
 <div class = "simple_border center-box bar">
-    <div class = "simple_border">
-    <h2>About Me</h2>
-    <p>{{about_me}}</p>
+    <div>
+    <h2 class = "no_margin">About Me</h2>
+    <p  class = "simple_border">{{about_me}}</p>
     </div>
-
-    <div class = "simple_border">
-    <h2>Picture</h2>
-    <p>{{profile_picture}}</p>
+    <pre>     -     </pre>
+    <div>
+    <h2 class = "no_margin">Picture</h2>
+    <p class = "simple_border">{{profile_picture}}</p>
     </div>
 </div>
 <h2>Interview</h2>
