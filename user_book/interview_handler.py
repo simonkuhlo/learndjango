@@ -1,9 +1,9 @@
 from . import models
 
 
-def entry_to_dict(etnryid):
-    object = models.Entry.objects.get(id=etnryid)
-    answers = models.Answer.objects.filter(entry=etnryid).order_by('question__sort_id')
+def questions_to_list(interviewid):
+    #object = models.Entry.objects.get(id=interviewid)
+    questions = models.Question.objects.filter(interview=interviewid).order_by('sort_id')
     author = models.people.Person.objects.get(id=object.author.id)
     interview_dict = {}
     for answer in answers:

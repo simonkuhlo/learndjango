@@ -1,59 +1,54 @@
-"""
-USERNAME
-_created_when_
-display about me 
-display Profile Picture
-#for answer in answers:
-display answer.question.name
-display answer.value
-#endfor
-"""
-
 {% extends 'main.html'%}
 
 {% block content %}
 
-<a href="/people/">&#x21B6; Back</a>
+{% load static %}
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/entry.css' %}">
 
-<h1 class = "centered">{{person.first_name}} {{person.last_name}}</h1>
-<div class = "center-box">
-    
-    <div class = "simple_border medium_box">
-    <div class = "center-box">
 
-        <table class = "simple_border">
-            <tr>
-                <th>First Name</th>
-                <th>{{person.first_name}}</th>
-            </tr>
-            <tr>
-                <th>Last Name</th>
-                <th>{{person.last_name}}</th>
-            </tr>
-            <tr>
-                <th>Birthday</th>
-                <th>{{person.birthday}}</th>
-            </tr>
-            <tr>
-                <th>Address</th>
-                <th>{{person.address}}</th>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <th>{{person.email}}</th>
-            </tr>
-            <tr>
-                <th>Contacts</th>
-                <th>TODO</th>
-            </tr>
-        </table>
-        
+<a href="/book/">&#x21B6; Back</a>
+
+<div class = "horizontal-box entry-heading">
+    <h1 class = "centered">
+        {{full_name}}
+    </h1>
+</div>
+
+
+<div class = "horizontal-box entry-info">
+    <div class = "vertical-box entry-info-about_me simple_border">
+        <h2 class = "no_margin">
+            About Me
+        </h2>
+        <p  class = "simple_border">
+            {{about_me}}
+        </p>
     </div>
-    <hr>
-        <h3 class="no_margin">Descprition</h3>
-        <p class="no_margin">{{person.description}}</p>
-    <hr>
-    <p class = "footnote no_margin">Created: {{person.created}}<br>Updated: {{person.updated}}</p>
+    <div class = "vertical-box entry-info-picture simple_border">
+        <h2 class = "no_margin">
+            Picture
+        </h2>
+        <p  class = "simple_border">
+            {{profile_picture}}
+        </p>
+    </div>
 </div>
+
+
+<div class = "horizontal-box entry-interview">
+    {% for question, answer in interview.items %}
+        <div class = "horizontal-box entry-interview-question">
+            <h3>{{question}}</h3>
+        </div>
+        <div class = "horizontal-box entry-interview-answer">
+            <p>{{answer}}</p>
+        </div>
+    {% endfor %}
 </div>
+
+
+<div class = "horizontal-box entry-footer">
+
+</div>
+
 {% endblock %}

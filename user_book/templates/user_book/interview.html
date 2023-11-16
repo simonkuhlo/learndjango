@@ -1,0 +1,29 @@
+{% extends 'main.html'%}
+
+{% block content %}
+
+<h2>Interview</h2>
+
+<form action="/search/" method="post">
+{% csrf_token %}
+    
+    
+<div class = "form-box">
+{% for question in questions %}
+  <label>
+    {{question.question_value}}
+  </label><br>
+  <label class = "footnote">
+    {{question.description}}
+  </label><br>
+
+  <input type="text" id="{{question.id}}-{{question.name}}" name="{{question.id}}-{{question.name}}" class = "form-field">
+  <hr>
+{% endfor %}
+</div>
+<br><br><br>
+
+<input type="submit" value="Search!">
+</form>
+
+{% endblock %}

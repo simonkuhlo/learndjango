@@ -1,21 +1,18 @@
 from django.shortcuts import render
 from . import entry_handler
+from . import models
 # Create your views here.
 def home(request):
     return render(request, 'user_book/home.html')
 
-def entry(request):
-    entry = {
-        "question_1" : {
-            "question" : "question",
-            "answer" : "answer"
-        }
-    }
-    ctx = {
-        {"entry" : entry}
-    }
-    return render(request, 'user_book/home.html')
+def entry(request, pk):
+    entry_dict = entry_handler.entry_to_dict(pk)
+    ctx = entry_dict
+    return render(request, 'user_book/entry.html', ctx)
 
-def test(request):
-    entry_handler.entry_to_dict(1)
-    return render(request, 'user_book/window.html')
+def interview(request, pk):
+    question_list = models.Question.objects.filter(interview=pk).order_by('sort_id')
+    ctx = {
+        "questions" : question_list
+        }
+    return render(request, 'user_book/interview.html', ctx)

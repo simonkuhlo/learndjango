@@ -7,21 +7,7 @@
     
 }
 
-.wrap-box{
-    display: inline-flex;
+.vertical-box{
+    display: inline-block;
 }
 
-.medium_box{
-    max-width: 500px;
-    width: 500px;
-}
-
-.small_box{
-    width: 200px;
-}
-
-.bar{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
