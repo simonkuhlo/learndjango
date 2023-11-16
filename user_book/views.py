@@ -15,4 +15,4 @@ def interview(request, pk):
     ctx = {
         "questions" : question_list
         }
-    return render(request, 'user_book/interview.html', ctx)
+    return render(request, 'user_book/new_entry.html', ctx)

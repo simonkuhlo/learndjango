@@ -6,9 +6,7 @@
 
 <form action="/search/" method="post">
 {% csrf_token %}
-    
-    
-
+  
   <div class = "horizontal-box new_entry-interview">
 
     {% for question in questions %}
@@ -41,6 +39,7 @@
     <div class = "horizontal-box new_entry-interview-controls">
       <input type="submit" value="Submit!!">
     </div>
+    
   </div>
 
 </form>
