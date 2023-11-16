@@ -2,7 +2,6 @@
 
 {% block content %}
 
-<<<<<<< HEAD
 {% load static %}
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/entry.css' %}">
 
@@ -52,25 +51,4 @@
 
 </div>
 
-=======
-<a href="/book/">&#x21B6; Back</a>
-
-<h1 class = "centered">{{full_name}}</h1>
-<div class = "simple_border center-box bar">
-    <div>
-    <h2 class = "no_margin">About Me</h2>
-    <p  class = "simple_border">{{about_me}}</p>
-    </div>
-    <pre>     -     </pre>
-    <div>
-    <h2 class = "no_margin">Picture</h2>
-    <p class = "simple_border">{{profile_picture}}</p>
-    </div>
-</div>
-<h2>Interview</h2>
-{% for question, answer in interview.items %}
-    <h3>{{question}}</h3>
-    <p>{{answer}}</p>
-{% endfor %}
->>>>>>> 71e3968083c2cf415ed4c85c607f449032096368
 {% endblock %}
