@@ -10,29 +10,3 @@
 .vertical-box{
     display: inline-block;
 }
-
-<<<<<<< HEAD
-=======
-.medium_box{
-    max-width: 500px;
-    width: 500px;
-}
-
-.small_box{
-    width: 200px;
-}
-
-.bar{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.spacer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-left: 20px;
-    padding-right: 30px;
-}
->>>>>>> 71e3968083c2cf415ed4c85c607f449032096368
