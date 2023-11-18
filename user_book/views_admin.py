@@ -5,16 +5,19 @@ import django_tables2 as dtables
 from . import models
 from . import tables
 from . import filters
+from . import forms
 # Create your views here.
 
-def interview(request, pk):
-    question_list = models.Question.objects.filter(interview=pk).order_by('sort_id')
+def edit_question(request, pk):
+    question = models.Question.objects.get(id=pk)
+    form = forms.EditQuestionForm(instance=question)
     ctx = {
-        "questions" : question_list
+        "form" : form
         }
-    return render(request, 'user_book/admin/interview_viewer.html', ctx)
+    return render(request, 'user_book/admin/edit_question.html', ctx)
 
-
+def edit_question_success(request):
+    return render(request, 'user_book/admin/success.html')
 
 class interview_manager(SingleTableMixin, FilterView):
     table_class = tables.QuestionTable

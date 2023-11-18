@@ -7,4 +7,4 @@ class QuestionTable(tables.Table):
         model = models.Question
         template_name = "django_tables2/bootstrap.html"
         fields = ("sort_id", "name", "question_value", "type", "required", "edit")
-    edit = TemplateColumn(template_name='user_book/tables/edit_question.html')
+    edit = TemplateColumn(template_name='user_book/tables/edit_question_button.html')
