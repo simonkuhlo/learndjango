@@ -1,0 +1,18 @@
+{% extends 'main.html'%}
+
+{% block content %}
+
+
+{% load static %}
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/entry.css' %}">
+
+
+<a href="/book/">
+    &#x21B6; Back
+</a>
+
+
+{% load django_tables2 %}
+{% render_table table %}
+
+{% endblock %}
