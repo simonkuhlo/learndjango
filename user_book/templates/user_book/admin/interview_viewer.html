@@ -12,7 +12,27 @@
 </a>
 
 
-{% load django_tables2 %}
-{% render_table table %}
+<table class="table-sortable">
+    <thead>
+        <tr>
+            <th class = "th-sort-none">Sort-id</th>
+            <th class = "th-sort-none">Name</th>
+            <th class = "th-sort-none">Question</th>
+            <th class = "th-sort-none">TYPE</th>
+            <th class = "th-sort-none">Required?</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for question in questions %}
+        <tr>
+            <td>{{question.sort_id}}</td>
+            <td><a href="/questions/id:{{question.id}}">{{question.name}}</a></td>
+            <td>{{question.question_value}}</td>
+            <td>{{question.type}}</td>
+            <td>{{question.required}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 {% endblock %}
