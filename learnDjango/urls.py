@@ -25,5 +25,6 @@ urlpatterns = [
     path('people/', include('people.urls'), name = 'people'),
     path('book/', include('user_book.urls'), name = 'book'),
     path('search/', views.search, name='search'),
-    path('', views.home, name='home')
+    path('', views.home, name='home'),
+    path('', include('django_dyn_dt.urls'))
 ]

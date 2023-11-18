@@ -4,18 +4,15 @@
 
 <h1>Home Template</h1>
 
-<div>
-    <a href='{% url 'create-room' %}'>
-        <p style = "border:double black 2px; padding:3px; display: inline-block;">Create Room</p>
-    </a>
-    <div>
-        {% for entry in entries %}
-        <div>
-            <span>@{{entry.author.name}}</span>
-            <h5>{{room.id}} -- <a href="/room/{{room.id}}">{{room.name}}</a> </h5>
-        </div>
-        {% endfor %}
-    </div>
+<div class="container">
+    <h1>My First Bootstrap Page</h1>
+    <p>This part is inside a .container class.</p>
+    <p>The .container class provides a responsive fixed width container.</p>
+</div>
+<div class="container-fluid">
+    <h1>My First Bootstrap Page</h1>
+    <p>This part is inside a .container class.</p>
+    <p>The .container class provides a responsive fixed width container.</p>
 </div>
 
 {% endblock %}
