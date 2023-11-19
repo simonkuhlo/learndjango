@@ -16,11 +16,31 @@ def edit_question(request, pk):
         }
     return render(request, 'user_book/admin/edit_question.html', ctx)
 
-def edit_question_success(request):
-    return render(request, 'user_book/admin/success.html')
-
 class interview_manager(SingleTableMixin, FilterView):
     table_class = tables.QuestionTable
     model = models.Question
     template_name = 'user_book/admin/home.html'
     filterset_class = filters.InterviewFilter
+
+#new concept
+class question_list(SingleTableMixin, FilterView):
+    pass
+
+def add_question(request, id):
+    pass
+
+def edit_question(request, id):
+    pass
+
+def delete_question(request, id):
+    pass
+
+#approach 2
+def list_object(request, type):
+    match type:
+
+        case "question" : pass
+
+        case "interview" : pass
+
+        case ""
