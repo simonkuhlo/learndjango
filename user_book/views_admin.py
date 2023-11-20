@@ -38,9 +38,16 @@ def delete_question(request, id):
 #approach 2
 def list_object(request, type):
     match type:
-
-        case "question" : pass
+        case "question" :
+            return test(request)
 
         case "interview" : pass
 
-        case "" : pass
+        case _ :
+            return edit_question(request, "1")
+ 
+    return_object = edit_question(request, "1")
+    return return_object
+
+def test(request):
+    return render(request, 'user_book/test.html')
