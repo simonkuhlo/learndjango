@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import os, inspect
-import django_dyn_dt
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -61,13 +59,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'learnDjango.urls'
 
-TEMPLATE_DIR_DATATB = os.path.join(BASE_DIR, "django_dyn_dt/templates")
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'templates', TEMPLATE_DIR_DATATB
+            BASE_DIR / 'templates'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -131,16 +128,12 @@ USE_TZ = True
 DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap4.html"
 
 STATIC_URL = 'static/'
-DYN_DB_PKG_ROOT = os.path.dirname( inspect.getfile( django_dyn_dt ) )
+
 STATICFILES_DIRS = [
-    BASE_DIR / 'static', os.path.join(DYN_DB_PKG_ROOT, "templates/static"),
+    BASE_DIR / 'static'
 ]
 
-DYNAMIC_DATATB = {
-    # SLUG -> Import_PATH 
-    'interviews'  : "user_book.models.Question",
-    'interview_list'  : "user_book.models.Interview",
-}
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

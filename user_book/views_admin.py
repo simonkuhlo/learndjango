@@ -43,4 +43,4 @@ def list_object(request, type):
 
         case "interview" : pass
 
-        case ""
+        case "" : pass
