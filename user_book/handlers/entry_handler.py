@@ -1,4 +1,4 @@
-from . import models
+from .. import models
 
 
 def entry_to_dict(etnryid):

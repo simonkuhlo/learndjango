@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . import entry_handler
+from .handlers import entry_handler
 from . import models
 # Create your views here.
 def home(request):
@@ -16,3 +16,4 @@ def interview(request, pk):
         "questions" : question_list
         }
     return render(request, 'user_book/new_entry.html', ctx)
+

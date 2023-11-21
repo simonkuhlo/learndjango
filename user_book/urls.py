@@ -1,6 +1,5 @@
 from django.urls import path
 from . import views
-from . import views_admin
 
 urlpatterns = [
     path('', views.home, name = "home"),
@@ -28,7 +27,7 @@ urlpatterns = [
     # path('admin/entry/delete/<int:id>/', views_admin.delete_entry, name='delete_entry'),
 
     #approach 2
-    path('admin/view/<str:type>', views_admin.list_object, name='object_list'),
+    #path('admin/view/<str:type>', views_admin.list_object, name='object_list'),
     # path('admin/add/<str:type>', views_admin.add_object, name='add_object'),
     # path('admin/edit/<str:type>/<int:id>', views_admin.edit_object, name='edit_object'),
     # path('admin/delete/<str:type>/<int:id>', views_admin.delete_object, name='delete_object'),
