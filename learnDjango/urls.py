@@ -20,11 +20,12 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('jet/', include('jet.urls', 'jet')),
+    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
     path('test/', include('user_book.urls'), name = 'test'),
     path('keys/', include('key_manager.urls'), name = 'keys'),
     path('people/', include('people.urls'), name = 'people'),
     path('book/', include('user_book.urls'), name = 'book'),
     path('search/', views.search, name='search'),
     path('', views.home, name='home'),
-    path('', include('django_dyn_dt.urls'))
 ]

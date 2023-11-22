@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -32,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jet.dashboard',
+    'jet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -130,8 +131,9 @@ DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap4.html"
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    BASE_DIR / 'static'
 ]
+
 
 
 # Default primary key field type
