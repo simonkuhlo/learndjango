@@ -39,8 +39,9 @@ def delete_question(request, id):
 def list_object(request, type):
     match type:
 
-        case "question" : pass
-
+        case "question" :
+            edit_question(request, "1")
+            
         case "interview" : pass
 
-        case ""
+        case "" : pass
