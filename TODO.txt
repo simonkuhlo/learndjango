@@ -1,3 +1,4 @@
 [ ] Add TODO List
 [ ] Finish friendbook
 [ ] Project Manager
+[ ] Image upload and storing system
