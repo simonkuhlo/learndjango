@@ -4,6 +4,7 @@
 [ ] Image upload and storing system
 [ ] Todo lists for different stuff
 [ ] Diashow
+[ ] Spital Website Demo
 
 Freundebuch:
 - View finished entry
